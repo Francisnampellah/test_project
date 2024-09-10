@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef,useState,useEffect } from 'react';
+import React from 'react';
 
 import Image from "next/image";
-import Navbar from "./component/navBar";
+import Navbar from "./component/navBar"; 
 import Minion from "./assets/minion.jpg";
 import { MdVerified } from "react-icons/md";
 import { IoCodeSlashOutline } from "react-icons/io5";
@@ -21,21 +21,7 @@ interface FooterLinksProps {
 }
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("white");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setBgColor("bg-blue-500"); 
-      } else {
-        setBgColor("white"); 
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
 
   return (
@@ -251,7 +237,7 @@ const ExperienceCard = ({item }: {item:any},index:{index:any}) => (
       </div>
       <ul className="list-disc ml-6 mt-2 space-y-2 text-gray-700">
 
-        {item.description.map((each:{each:any},index)=>(
+        {item.description.map((each:{each:any},index:{index:any})=>(
         <li key={index}>{each}</li>
         ))}
 

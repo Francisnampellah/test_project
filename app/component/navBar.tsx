@@ -1,11 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState,useEffect } from "react";
-import NavLink from "./navLink";
 import { motion } from "framer-motion";
-import { useWindowSize } from "./windowSize";
 
 const links = [
   { url: "/", title: "Home" },
@@ -16,7 +13,6 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const size = useWindowSize();
   const [bgColor, setBgColor] = useState("#1E3A8A");
 
   useEffect(() => {
@@ -32,6 +28,8 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
 
   const topVariants = {
     closed: {
@@ -86,7 +84,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-[#1E3A8A]`}>
+    <div className={`h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-[${bgColor}]`}>
 
       <div className="flex justify-between w-full items-center">
         <div className="flex justify-center items-center">
