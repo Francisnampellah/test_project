@@ -236,8 +236,8 @@ const ExperienceCard = ({item }: {item:any}) => (
       </div>
       <ul className="list-disc ml-6 mt-2 space-y-2 text-gray-700">
 
-      {item.description.map(({each}:{each:string}, index) => (
-  <li key={index}>{each}</li>
+      {item.description.map(({each}:{each:string}) => (
+  <li >{each}</li>
 ))}
 
       </ul>
