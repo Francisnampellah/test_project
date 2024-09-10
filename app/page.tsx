@@ -272,14 +272,14 @@ const EducationSection = () => (
 </div>
 );
 
-const SkillSection = ({title,content}: {title:string,content:string[]}) => (
+const SkillSection = ({title,content}: {title:string,content:string}) => (
   <div className="flex w-full flex-col gap-2 my-4">
     <h3 className="text-lg font-bold">
       {title}
     </h3>
     <div className='flex flex-wrap'>
-      {content.map((each, index) => (
-        <span key={index}>{each},</span>
+      {content.split('').map((each, index) =>(
+        <span key={index}>{each}</span>
       ))}
     </div>
   </div>
