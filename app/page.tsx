@@ -183,8 +183,7 @@ const AccordionSections = () => (
 
     <Accordion title="Skills">
       {Object.entries(techStack).map(([title, content], index) => (
-        <SkillSection key={index} title={title} content={content} />
-      ))}
+        <SkillSection key={index} title={title} content={content.join(', ')} />      ))}
     </Accordion>
   </div>
 );
