@@ -236,9 +236,9 @@ const ExperienceCard = ({item }: {item:any}) => (
       </div>
       <ul className="list-disc ml-6 mt-2 space-y-2 text-gray-700">
 
-        {item.description.map((each:{each:String})=>(
-        <li >{each}</li>
-        ))}
+      {item.description.map((each, index) => (
+  <li key={index}>{each}</li>
+))}
 
       </ul>
     </div>
@@ -272,20 +272,17 @@ const EducationSection = () => (
 </div>
 );
 
-const SkillSection = ({title,content}: {title:string,content:string}) => (
+const SkillSection = ({title,content}: {title:string,content:string[]}) => (
   <div className="flex w-full flex-col gap-2 my-4">
-                  <h3 className="text-lg font-bold">
-                    {title}
-                  </h3>
-
-                    <div className='flex flex-wrap'>
-
-                  {content.map((each:{each:string})=>(
-                    <span>{each},</span>
-                  ))}
-                    </div>
-
-                </div>
+    <h3 className="text-lg font-bold">
+      {title}
+    </h3>
+    <div className='flex flex-wrap'>
+      {content.map((each, index) => (
+        <span key={index}>{each},</span>
+      ))}
+    </div>
+  </div>
 );
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ data }) => {
