@@ -68,7 +68,7 @@ export default function Home() {
           <h1 className="text-blue-700 text-2xl font-bold">Gianluca Vaccarini</h1>
           <div className="flex items-center gap-2">
             <MdVerified className="text-green-700" />
-            <h3 className="text-green-700 text-sm"> <span className="font-semibold"> Verified Expert </span> n Engineering</h3>
+            <h3 className="text-green-700 text-sm"> <span className="font-semibold"> Verified Expert </span> in Engineering</h3>
           </div>
           <div className="flex flex-col gap-2">
             <InfoItem icon={<IoCodeSlashOutline />} text="Full-stack Developer" />
