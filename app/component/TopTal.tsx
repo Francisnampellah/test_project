@@ -12,7 +12,6 @@ const App = () => {
     <div className="container">
       {steps.map((step, index) => (
         <div className="circle-container" key={index}>
-          {/* Circle */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -22,7 +21,6 @@ const App = () => {
             <div className="circle-number">{index + 1}</div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -33,12 +31,11 @@ const App = () => {
             <p>{step.content}</p>
           </motion.div>
 
-          {/* Arrow */}
           {index < steps.length - 1 && (
             <motion.div
               className="arrow"
               initial={{ width: 0 }}
-              animate={{ width: "150%" }}
+              animate={{ width: "200%" }}
               transition={{ delay: (index + 1) * 1.5, duration: 0.5 }}
             />
           )}

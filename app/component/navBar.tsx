@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import NavLink from "./navLink";
 import { motion } from "framer-motion";
 import { useWindowSize } from "./windowSize";
@@ -16,8 +16,22 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const size = useWindowSize();
+  const [bgColor, setBgColor] = useState("#1E3A8A");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setBgColor("#1E3A8A"); 
+      } else {
+        setBgColor("#1E3A8A"); 
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const topVariants = {
     closed: {
@@ -72,19 +86,20 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-slate-800/30 backdrop-blur border bg-[rgb(15,36,110)]">
+    <div className={`h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-[#1E3A8A]`}>
 
       <div className="flex justify-between w-full items-center">
-        <div>TopTal</div>
+        <div className="flex justify-center items-center">
+
+        <h1 className="text-white ffont-black text-3xl">TopTal</h1>
+        <span className="text-white text-2xl font-light">. Developer</span>
+        </div>
 
         <button className="bg-green-500 p-2 rounded text-sm text-white">
           Hire a developer
         </button>
 
       </div>
-
-
-
 
       <div className="md:hidden">
         <button
@@ -107,7 +122,6 @@ const Navbar = () => {
             className="w-8 md:w-10 h-1 bg-black rounded origin-left"
           ></motion.div>
         </button>
-        {/* MENU LIST */}
         {open && (
           <motion.div
             variants={listVariants}
