@@ -13,21 +13,21 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [bgColor, setBgColor] = useState("#1E3A8A");
+  // const [bgColor, setBgColor] = useState("#1E3A8A");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setBgColor("#1E3A8A"); 
-      } else {
-        setBgColor("#1E3A8A"); 
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       setBgColor("#1E3A8A"); 
+  //     } else {
+  //       setBgColor("#1E3A8A"); 
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
 
 
@@ -84,7 +84,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-[${bgColor}]`}>
+    <div className={`h-12 md:h-16 fixed w-full self-center z-50 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl px-8 md:px-12 lg:px-20 xl:px-48 text-xl bg-[#1E3A8A]`}>
 
       <div className="flex justify-between w-full items-center">
         <div className="flex justify-center items-center">
