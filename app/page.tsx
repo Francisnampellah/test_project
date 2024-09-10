@@ -20,6 +20,19 @@ interface FooterLinksProps {
   };
 }
 
+
+interface ExperienceCardProps {
+  item: {
+    role: string;
+    company: string;
+    period: string;
+    description: string[]; 
+  };
+}
+
+
+
+
 export default function Home() {
 
 
@@ -220,26 +233,26 @@ const SkillTag = ({ skill }: { skill: string }) => (
   </div>
 );
 
-const ExperienceCard = ({item }: {item:any}) => (
-  <div  className="flex">
+
+
+const ExperienceCard = ({ item }: ExperienceCardProps) => (
+  <div className="flex">
     <div className="w-4 pt-2 flex flex-col items-center">
       <GoDotFill className="text-sm text-blue-900" />
       <div className="h-full border-l-2 border-dashed border-gray-400"></div>
     </div>
-    <div className="ml-4 p-6">
-      <div className="flex justify-between">
+    <div className="flex flex-col w-full p-6">
+      <div className="flex w-full justify-between">
         <div>
-          <h3 className="text-xl font-red-400">{item.role}</h3>
+          <h3 className="text-xl text-black">{item.role}</h3>
           <span className="text-gray-500">{item.company}</span>
         </div>
         <span>{item.period}</span>
       </div>
       <ul className="list-disc ml-6 mt-2 space-y-2 text-gray-700">
-
-      {item.description.map(({each}:{each:string}) => (
-  <li >{each}</li>
-))}
-
+        {item.description.map((desc, index) => (
+          <li key={index}>{desc}</li>
+        ))}
       </ul>
     </div>
   </div>
