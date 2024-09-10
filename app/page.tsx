@@ -215,14 +215,14 @@ const FooterSections = () => (
 );
 
 
-const SkillTag = ({ skill }: { skill: string },index:{index:any}) => (
-  <div key={index} className="border text-blue-700 border-blue-700 p-1 rounded-2xl text-[12px]">
+const SkillTag = ({ skill }: { skill: string }) => (
+  <div className="border text-blue-700 border-blue-700 p-1 rounded-2xl text-[12px]">
     {skill}
   </div>
 );
 
-const ExperienceCard = ({item }: {item:any},index:{index:any}) => (
-  <div key={index} className="flex">
+const ExperienceCard = ({item }: {item:any}) => (
+  <div  className="flex">
     <div className="w-4 pt-2 flex flex-col items-center">
       <GoDotFill className="text-sm text-blue-900" />
       <div className="h-full border-l-2 border-dashed border-gray-400"></div>
@@ -237,8 +237,8 @@ const ExperienceCard = ({item }: {item:any},index:{index:any}) => (
       </div>
       <ul className="list-disc ml-6 mt-2 space-y-2 text-gray-700">
 
-        {item.description.map((each:{each:any},index:{index:any})=>(
-        <li key={index}>{each}</li>
+        {item.description.map((each:{each:String})=>(
+        <li >{each}</li>
         ))}
 
       </ul>
