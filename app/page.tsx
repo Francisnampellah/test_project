@@ -121,7 +121,7 @@ const BioSection = () => (
     <p>
       Gianluca is a highly versatile full-stack software engineer. He has helped
       many companies take an idea and turn it into a product that serves
-      thousands to millions of users. He's built the software that powers Tesla's
+      thousands to millions of users. He built the software that powers Tesla
       service centers for scheduling from scratch and worked at big tech companies,
       such as Atlassian, Adobe, Snapchat, Starbucks, and T-Mobile. Known for
       building fast and exceptionally well, Gianluca can work on either end of the stack.
@@ -229,13 +229,13 @@ const FooterSections = () => (
 );
 
 
-const SkillTag = ({ skill }: { skill: string },index) => (
+const SkillTag = ({ skill }: { skill: string },index:{index:any}) => (
   <div key={index} className="border text-blue-700 border-blue-700 p-1 rounded-2xl text-[12px]">
     {skill}
   </div>
 );
 
-const ExperienceCard = ({item }: {item:any},index) => (
+const ExperienceCard = ({item }: {item:any},index:{index:any}) => (
   <div key={index} className="flex">
     <div className="w-4 pt-2 flex flex-col items-center">
       <GoDotFill className="text-sm text-blue-900" />
@@ -273,7 +273,7 @@ const EducationSection = () => (
   <div className="flex justify-between">
     <div>
       <h3 className="text-lg font-bold">
-        Bachelor's Degree in Computer Science
+        Bachelors Degree in Computer Science
       </h3>
     </div>
 
